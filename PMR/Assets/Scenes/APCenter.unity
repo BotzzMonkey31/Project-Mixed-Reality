@@ -2338,7 +2338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1339463729}
   m_Layer: 0
-  m_Name: Screen
+  m_Name: Big Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
