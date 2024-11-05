@@ -12,4 +12,11 @@ public class PlayVideo : MonoBehaviour
             Debug.Log("no video player component found");
         }
     }
+    public void StartVideo()
+    {
+        if(player != null)
+        {
+            player.Play();
+        }
+    }
 }
