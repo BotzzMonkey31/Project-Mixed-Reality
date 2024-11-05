@@ -47,6 +47,6 @@ public class Button : XRBaseInteractable
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log("grabbed interactable");
+        Debug.Log("pushed button");
     }
 }
