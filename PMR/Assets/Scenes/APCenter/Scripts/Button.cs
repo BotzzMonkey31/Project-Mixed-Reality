@@ -55,6 +55,16 @@ public class Button : XRBaseInteractable
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log("pushed button");
+        if(ScreenPlane != null)
+        {
+            try
+            {
+                ScreenPlane.GetComponent<PlayVideo>().StartVideo();
+            }
+            catch
+            {
+                Debug.LogError("couldn't start playing video on specified gamobject for screen plane");
+            }
+        }
     }
 }
