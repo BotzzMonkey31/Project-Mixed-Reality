@@ -32,7 +32,6 @@ public class HighlightInteractable : XRBaseInteractable
 
     private void OnHover(HoverEnterEventArgs args)
     {
-        Debug.Log("enter hover on interactable");
         if (outline != null)
         {
             outline.enabled = true;
@@ -40,7 +39,6 @@ public class HighlightInteractable : XRBaseInteractable
     }
     private void OnHoverExited(HoverExitEventArgs args)
     {
-        Debug.Log("exited hover on interactable");
         if (outline != null)
         {
             outline.enabled = false;
