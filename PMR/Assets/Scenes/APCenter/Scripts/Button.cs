@@ -5,6 +5,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Button : XRBaseInteractable
 {
     private Outline outline;
+    public GameObject ScreenPlane;
+    public void Start()
+    {
+        if(ScreenPlane == null)
+        {
+            Debug.LogError("no screen plane defined for button");
+        }
+    }
     protected override void OnEnable()
     {
         base.OnEnable();
