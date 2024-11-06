@@ -1013,7 +1013,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 789152796347287516, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.905
+      value: 0.946
       objectReference: {fileID: 0}
     - target: {fileID: 1713221857892931126, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1058,6 +1058,22 @@ PrefabInstance:
     - target: {fileID: 4076595347853558993, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
       propertyPath: m_Name
       value: Door_MTN_Frame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133641698378273023, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.89881
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133641698378273023, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133641698378273023, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133641698378273023, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6282,8 +6298,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1069782, y: 0.40294835, z: 0.073825054}
-  m_Center: {x: 0.0000019185245, y: 0.14798297, z: -0.031570856}
+  m_Size: {x: 0.17855301, y: 0.40294835, z: 0.1048384}
+  m_Center: {x: 0.008584303, y: 0.14798297, z: -0.016064182}
 --- !u!114 &1340832421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6296,7 +6312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 0.9607843, b: 0, a: 1}
   outlineWidth: 4
   precomputeOutline: 0
