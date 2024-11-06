@@ -10,7 +10,7 @@ public class DoorOpenClose : MonoBehaviour
     private bool isOpen = true;
     private bool isMoving = false;
 
-    public float doorMoveDuration = 1f;
+    public float doorMoveDurationInSeconds = 1f;
 
     void Start()
     {
