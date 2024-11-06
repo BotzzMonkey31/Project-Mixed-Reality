@@ -12,6 +12,7 @@ public class DoorOpenClose : MonoBehaviour
 
     [Range(1f, 10f)]
     public float doorMoveDurationInSeconds = 1f;
+    public bool playAudio = true;
     public AudioSource doorAudioSource;
 
     void Start()
@@ -59,7 +60,7 @@ public class DoorOpenClose : MonoBehaviour
         Vector3 startPosition = doorChild.position;
         float elapsedTime = 0;
 
-        if (doorAudioSource != null)
+        if (doorAudioSource != null && playAudio)
         {
             doorAudioSource.Play();
         }
