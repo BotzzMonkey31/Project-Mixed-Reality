@@ -12,6 +12,7 @@ public class DoorOpenClose : MonoBehaviour
 
     [Range(1f, 10f)]
     public float doorMoveDurationInSeconds = 1f;
+    public AudioSource doorAudioSource;
 
     void Start()
     {

@@ -1660,7 +1660,7 @@ MonoBehaviour:
   closedPosition: {x: 0, y: 0, z: 0}
   openPosition: {x: 0, y: 0, z: 0}
   doorMoveDurationInSeconds: 1
-  doorAudioSource: {fileID: 0}
+  doorAudioSource: {fileID: 476633349}
 --- !u!82 &476633349
 AudioSource:
   m_ObjectHideFlags: 0
