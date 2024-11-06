@@ -24,8 +24,18 @@ public class DoorOpenClose : MonoBehaviour
         }
     }
 
-    void Update()
+    public void ToggleDoor()
     {
+        if(isOpen == true)
+        {
+            isOpen = false;
+            Close();
+        }
+        else
+        {
+            isOpen = true;
+            Open();
+        }
     }
     private void Open()
     {
