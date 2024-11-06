@@ -26,14 +26,6 @@ public class DoorOpenClose : MonoBehaviour
 
     void Update()
     {
-        // testing
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isOpen)
-                Close();
-            else
-                Open();
-        }
     }
     private void Open()
     {
