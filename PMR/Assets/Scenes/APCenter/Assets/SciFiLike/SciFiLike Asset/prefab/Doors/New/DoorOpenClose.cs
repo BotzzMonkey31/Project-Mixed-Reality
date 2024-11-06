@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DoorOpenClose : MonoBehaviour
@@ -6,7 +7,10 @@ public class DoorOpenClose : MonoBehaviour
     public Vector3 closedPosition;
     public Vector3 openPosition;
 
-    private bool isOpen = false;
+    private bool isOpen = true;
+    private bool isMoving = false;
+
+    public float doorMoveDuration = 1f;
 
     void Start()
     {
@@ -28,31 +32,35 @@ public class DoorOpenClose : MonoBehaviour
 
     public void ToggleDoor()
     {
-        if(isOpen == true)
+        if (isMoving) return;
+
+        if (isOpen)
         {
+            StartCoroutine(MoveDoor(closedPosition));
             isOpen = false;
-            Close();
         }
         else
         {
+            StartCoroutine(MoveDoor(openPosition));
             isOpen = true;
-            Open();
         }
     }
-    private void Open()
+
+    private IEnumerator MoveDoor(Vector3 targetPosition)
     {
-        if (doorChild != null)
+        isMoving = true;
+
+        Vector3 startPosition = doorChild.position;
+        float elapsedTime = 0;
+
+        while (elapsedTime < doorMoveDuration)
         {
-            doorChild.position = openPosition;
-            Debug.Log("Door opened");
+            doorChild.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / doorMoveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-    }
-    private void Close()
-    {
-        if (doorChild != null)
-        {
-            doorChild.position = closedPosition;
-            Debug.Log("Door closed");
-        }
+
+        doorChild.position = targetPosition;
+        isMoving = false;
     }
 }
