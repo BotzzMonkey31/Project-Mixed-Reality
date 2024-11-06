@@ -53,9 +53,9 @@ public class DoorOpenClose : MonoBehaviour
         Vector3 startPosition = doorChild.position;
         float elapsedTime = 0;
 
-        while (elapsedTime < doorMoveDuration)
+        while (elapsedTime < doorMoveDurationInSeconds)
         {
-            doorChild.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / doorMoveDuration);
+            doorChild.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / doorMoveDurationInSeconds);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
