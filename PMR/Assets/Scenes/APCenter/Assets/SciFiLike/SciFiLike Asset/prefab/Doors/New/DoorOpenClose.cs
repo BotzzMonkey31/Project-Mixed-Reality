@@ -30,6 +30,10 @@ public class DoorOpenClose : MonoBehaviour
             float doorHeight = doorChild.GetComponent<Renderer>().bounds.size.y;
             closedPosition = openPosition - new Vector3(0, doorHeight, 0);
         }
+        if (doorAudioSource == null)
+        {
+            Debug.LogError("AudioSource for door sound is not assigned.");
+        }
     }
 
     public void ToggleDoor()
@@ -55,6 +59,11 @@ public class DoorOpenClose : MonoBehaviour
         Vector3 startPosition = doorChild.position;
         float elapsedTime = 0;
 
+        if (doorAudioSource != null)
+        {
+            doorAudioSource.Play();
+        }
+
         while (elapsedTime < doorMoveDurationInSeconds)
         {
             doorChild.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / doorMoveDurationInSeconds);
@@ -63,6 +72,12 @@ public class DoorOpenClose : MonoBehaviour
         }
 
         doorChild.position = targetPosition;
+
+        if (doorAudioSource != null)
+        {
+            doorAudioSource.Stop();
+        }
+
         isMoving = false;
     }
 }
