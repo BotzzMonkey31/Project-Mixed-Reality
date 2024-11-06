@@ -20,7 +20,9 @@ public class DoorOpenClose : MonoBehaviour
         }
         if(doorChild != null)
         {
-            closedPosition = doorChild.position;
+            openPosition = doorChild.position;
+            float doorHeight = doorChild.GetComponent<Renderer>().bounds.size.y;
+            closedPosition = openPosition - new Vector3(0, doorHeight, 0);
         }
     }
 
@@ -39,10 +41,18 @@ public class DoorOpenClose : MonoBehaviour
     }
     private void Open()
     {
-        Debug.Log("Open");
+        if (doorChild != null)
+        {
+            doorChild.position = openPosition;
+            Debug.Log("Door opened");
+        }
     }
     private void Close()
     {
-        Debug.Log("Close");
+        if (doorChild != null)
+        {
+            doorChild.position = closedPosition;
+            Debug.Log("Door closed");
+        }
     }
 }
