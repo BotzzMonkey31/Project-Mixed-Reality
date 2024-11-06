@@ -1020,6 +1020,10 @@ PrefabInstance:
       value: 0.946
       objectReference: {fileID: 0}
     - target: {fileID: 1713221857892931126, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713221857892931126, guid: 331306311a19f67408588a9ed934f3f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.242
       objectReference: {fileID: 0}
@@ -1652,6 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closedPosition: {x: 0, y: 0, z: 0}
   openPosition: {x: 0, y: 0, z: 0}
+  doorMoveDurationInSeconds: 1
 --- !u!1001 &479157587
 PrefabInstance:
   m_ObjectHideFlags: 0
