@@ -8,6 +8,7 @@ public class Doorhandle : XRBaseInteractable
     private Outline outline;
     public GameObject parent;
     private DoorOpenClose parentScript;
+    public bool enabled = true;
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -41,16 +42,26 @@ public class Doorhandle : XRBaseInteractable
         base.OnDisable();
     }
 
+    public void Enable()
+    {
+        enabled = true;
+    }
+
+    public void Disable()
+    {
+        enabled = false;
+    }
+
     private void OnHover(HoverEnterEventArgs args)
     {
-        if (outline != null)
+        if (outline != null && enabled)
         {
             outline.enabled = true;
         }
     }
     private void OnHoverExited(HoverExitEventArgs args)
     {
-        if (outline != null)
+        if (outline != null && enabled)
         {
             outline.enabled = false;
         }
@@ -58,6 +69,9 @@ public class Doorhandle : XRBaseInteractable
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        parentScript.ToggleDoor();
+        if(enabled)
+        {
+            parentScript.ToggleDoor();
+        }
     }
 }
