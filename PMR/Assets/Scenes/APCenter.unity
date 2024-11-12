@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 298259639}
   - component: {fileID: 298259638}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: ButtonAP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,8 +1081,8 @@ Transform:
   m_LocalScale: {x: 0.07110272, y: 0.22135, z: 0.72733}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 332646103}
   - {fileID: 1103218333}
+  - {fileID: 332646103}
   - {fileID: 298259637}
   m_Father: {fileID: 1277955188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 332646105}
   - component: {fileID: 332646104}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4958,7 +4958,7 @@ GameObject:
   - component: {fileID: 1103218335}
   - component: {fileID: 1103218334}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
