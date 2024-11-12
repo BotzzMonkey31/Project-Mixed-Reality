@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject[] elevatorButtons;
     public AudioSource elevatorBell;
+
+    private float delay = 3.0f;
     void Start()
     {
         foreach (GameObject button in elevatorButtons)
@@ -18,10 +21,37 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("can't find elevator bell");
         }
+        StartCoroutine(ChangeButtonStatus());
     }
 
     void Update()
     {
 
+    }
+    IEnumerator ChangeButtonStatus()
+    {
+        int currentButtonIndex = 0;
+        while (currentButtonIndex < elevatorButtons.Length)
+        {
+            yield return new WaitForSeconds(delay);
+
+            if (currentButtonIndex > 0)
+            {
+                var previousOutlineScript = elevatorButtons[currentButtonIndex - 1].GetComponent<Outline>();
+                if (previousOutlineScript != null)
+                {
+                    previousOutlineScript.enabled = false;
+                }
+            }
+
+            var currentOutlineScript = elevatorButtons[currentButtonIndex].GetComponent<Outline>();
+            if (currentOutlineScript != null)
+            {
+                currentOutlineScript.enabled = true;
+            }
+
+            currentButtonIndex++;
+        }
+        elevatorBell.Play();
     }
 }
