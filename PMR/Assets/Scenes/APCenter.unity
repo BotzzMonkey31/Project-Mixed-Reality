@@ -2515,6 +2515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2642a1894e1c54f9141153b7f14c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elevatorButtons:
+  - {fileID: 513862931}
+  - {fileID: 1006987825}
+  - {fileID: 298259636}
 --- !u!1001 &579296868
 PrefabInstance:
   m_ObjectHideFlags: 0
