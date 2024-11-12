@@ -53,6 +53,14 @@ public class DoorOpenClose : MonoBehaviour
             isOpen = true;
         }
     }
+    public void setDoorActive()
+    {
+        doorEnabled = true;
+    }
+    public void setDoorInactive()
+    {
+        doorEnabled = false;
+    }
 
     private IEnumerator MoveDoor(Vector3 targetPosition)
     {
