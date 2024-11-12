@@ -33,7 +33,6 @@ public class Doorhandle : XRBaseInteractable
         {
             parentScript = parent.GetComponent<DoorOpenClose>();
         }
-        Debug.Log("door status: " + doorEnabled.ToString());
     }
 
     protected override void OnDisable()
