@@ -14,6 +14,7 @@ public class DoorOpenClose : MonoBehaviour
     public float doorMoveDurationInSeconds = 1f;
     public bool playAudio = true;
     public AudioSource doorAudioSource;
+    public bool doorEnabled;
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class DoorOpenClose : MonoBehaviour
 
     public void ToggleDoor()
     {
-        if (isMoving) return;
+        if (isMoving || doorEnabled == false) return;
 
         if (isOpen)
         {
