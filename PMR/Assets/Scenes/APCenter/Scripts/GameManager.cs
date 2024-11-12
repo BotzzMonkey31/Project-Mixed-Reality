@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] elevatorButtons;
+    public GameObject door;
     public AudioSource elevatorBell;
 
     private float delay = 3.0f;
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
         if(elevatorBell == null)
         {
             Debug.LogError("can't find elevator bell");
+        }
+        if(door == null)
+        {
+            Debug.LogError("can't find elevator door");
         }
         StartCoroutine(ChangeButtonStatus());
     }

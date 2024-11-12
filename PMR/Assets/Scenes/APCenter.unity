@@ -2557,6 +2557,7 @@ MonoBehaviour:
   - {fileID: 513862931}
   - {fileID: 1006987825}
   - {fileID: 298259636}
+  door: {fileID: 1260851558}
   elevatorBell: {fileID: 1032426221}
 --- !u!1001 &579296868
 PrefabInstance:
@@ -6766,6 +6767,11 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1260851558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3059963392626335893, guid: b38af4d96435aa1469735ea1a68222bf, type: 3}
+  m_PrefabInstance: {fileID: 1175774397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1268856273
 PrefabInstance:
   m_ObjectHideFlags: 0
