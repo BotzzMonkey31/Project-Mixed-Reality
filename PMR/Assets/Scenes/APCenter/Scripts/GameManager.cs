@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] elevatorButtons;
     public GameObject door;
     public AudioSource elevatorBell;
+    public AudioSource elevatorHumm;
     private DoorOpenClose doorScript;
 
     private float delay = 3.0f;
@@ -23,6 +24,10 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("can't find elevator bell");
         }
+        if(elevatorHumm == null)
+        {
+            Debug.LogError("can't find elevator humm");
+        }
         if(door == null)
         {
             Debug.LogError("can't find elevator door");
@@ -32,6 +37,10 @@ public class GameManager : MonoBehaviour
             doorScript = door.GetComponent<DoorOpenClose>();
             doorScript.setDoorInactive();
             
+        }
+        if(elevatorHumm != null)
+        {
+            elevatorHumm.Play();
         }
         StartCoroutine(ChangeButtonStatus());
     }
@@ -63,6 +72,10 @@ public class GameManager : MonoBehaviour
             }
 
             currentButtonIndex++;
+        }
+        if (elevatorHumm != null)
+        {
+            elevatorHumm.Stop();
         }
         elevatorBell.Play();
         if(doorScript != null)
