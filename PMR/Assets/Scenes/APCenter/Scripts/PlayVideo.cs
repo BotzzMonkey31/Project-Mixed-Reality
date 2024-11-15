@@ -14,7 +14,7 @@ public class PlayVideo : MonoBehaviour
     }
     public void StartVideo()
     {
-        if(player != null)
+        if(player != null && !player.isPlaying)
         {
             player.Play();
         }
