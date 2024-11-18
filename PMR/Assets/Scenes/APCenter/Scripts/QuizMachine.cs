@@ -46,7 +46,7 @@ public class QuizMachine : MonoBehaviour
         questions.Add(new QuizQuestion(
             "Wat kun je doen om deze laag van je huid te beschermen tegen UV-stralen?",
             "Zonnecrème gebruiken.",
-            "Een dikke jas draagen.",
+            "Een dikke jas dragen.",
             "Niets, want deze laag is sterk genoeg.",
             Answer.A
             ));
