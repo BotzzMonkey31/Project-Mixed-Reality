@@ -9,21 +9,19 @@ public class QuizQuestion
     public Answer RightAnswer { get; set; }
     public QuizQuestion()
     {
-        QuizQuestion questionEmpty = new QuizQuestion();
-        questionEmpty.Question = "";
-        questionEmpty.AnswerA = "";
-        questionEmpty.AnswerB = "";
-        questionEmpty.AnswerC = "";
-        questionEmpty.RightAnswer = Answer.None;
+        Question = "";
+        AnswerA = "";
+        AnswerB = "";
+        AnswerC = "";
+        RightAnswer = Answer.None;
     }
     public QuizQuestion(string question, string answerA, string answerB, string answerC, Answer answer)
     {
-        QuizQuestion questionConstructed = new QuizQuestion();
-        questionConstructed.Question = question;
-        questionConstructed.AnswerA = answerA;
-        questionConstructed.AnswerB = answerB;
-        questionConstructed.AnswerC = answerC;
-        questionConstructed.RightAnswer = answer;
+        Question = question;
+        AnswerA = answerA;
+        AnswerB = answerB;
+        AnswerC = answerC;
+        RightAnswer = answer;
     }
     public bool checkAnswer(Answer answer)
     {
