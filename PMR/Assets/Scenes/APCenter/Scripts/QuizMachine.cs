@@ -8,6 +8,10 @@ public class QuizMachine : MonoBehaviour
     void Start()
     {
         InitQuestions();
+        foreach (QuizQuestion question in questions)
+        {
+            Debug.Log(question.ToString());
+        }
     }
 
     void Update()
