@@ -7859,6 +7859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CRT Display
       objectReference: {fileID: 0}
+    - target: {fileID: 1959600754540778, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4270593417788664, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
@@ -7921,7 +7925,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54502484042526242, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1959600754540778, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
