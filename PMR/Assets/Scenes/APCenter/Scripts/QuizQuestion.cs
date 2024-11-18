@@ -36,6 +36,14 @@ public class QuizQuestion
             return false;
         }
     }
+    public override string ToString()
+    {
+        return $"Question: {Question}\n" +
+           $"A: {AnswerA}\n" +
+           $"B: {AnswerB}\n" +
+           $"C: {AnswerC}\n" +
+           $"Correct Answer: {RightAnswer}";
+    }
 }
 public enum Answer
 {
