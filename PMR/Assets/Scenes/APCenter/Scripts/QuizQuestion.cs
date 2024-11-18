@@ -25,6 +25,17 @@ public class QuizQuestion
         questionConstructed.AnswerC = answerC;
         questionConstructed.RightAnswer = answer;
     }
+    public bool checkAnswer(Answer answer)
+    {
+        if(answer == RightAnswer && RightAnswer != Answer.None)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 public enum Answer
 {
