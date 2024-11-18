@@ -7923,6 +7923,18 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114004261157573766, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_Text
+      value: 'Test
+
+        Test2
+
+        Test3'
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54502484042526242, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
     m_RemovedGameObjects:
