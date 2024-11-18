@@ -25,8 +25,8 @@ public class QuizMachine : MonoBehaviour
         questions.Add(new QuizQuestion(
             "Wat denk je dat er gebeurt als UV-stralen je huidcellen beschadigen?",
             "Ze verdwijnen vanzelf.",
-            "Ze kunnen herstellen, maar niet altijd",
-            "Ze veranderen in andere cellen, zoals spiercellen",
+            "Ze kunnen herstellen, maar niet altijd.",
+            "Ze veranderen in andere cellen, zoals spiercellen.",
             Answer.B
             ));
         questions.Add(new QuizQuestion(
