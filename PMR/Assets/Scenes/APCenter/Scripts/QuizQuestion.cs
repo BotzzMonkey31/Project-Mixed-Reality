@@ -6,7 +6,7 @@ public class QuizQuestion
     public string AnswerA { get; set; } = "";
     public string AnswerB { get; set; } = "";
     public string AnswerC { get; set; } = "";
-    public Answer RightAnswer { get; set; };
+    public Answer RightAnswer { get; set; }
     public QuizQuestion()
     {
         QuizQuestion questionEmpty = new QuizQuestion();
