@@ -7929,11 +7929,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: m_Text
-      value: 'Test
+      value: 'Wat denk je dat er gebeurt als UV-stralen je huidcellen beschadigen?
 
-        Test2
 
-        Test3'
+        A:
+        Ze verdwijnen vanzelf.
+
+
+        B: Ze kunnen herstellen, maar niet altijd.
+
+
+        C:
+        Ze veranderen in andere cellen, zoals spiercellen.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54502484042526242, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
