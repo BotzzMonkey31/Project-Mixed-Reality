@@ -7929,21 +7929,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: m_Text
-      value: 'Wat denk je dat er gebeurt als UV-stralen je huidcellen beschadigen?
+      value: 'Waarom is deze laag extra gevaarlijk als er kankercellen terechtkomen?
 
 
         A:
-        Ze verdwijnen vanzelf.
+        Omdat kankercellen zich hier kunnen verspreiden via het bloed.
 
 
-        B: Ze kunnen herstellen, maar niet altijd.
+        B:
+        Omdat deze laag geen bescherming heeft.
 
 
-        C:
-        Ze veranderen in andere cellen, zoals spiercellen.
+        C:  Omdat deze laag geen
+        belangrijke functie heeft.
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 8b00dea2b55a7394fb43aa94fab0d1c8, type: 3}
     - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 35
