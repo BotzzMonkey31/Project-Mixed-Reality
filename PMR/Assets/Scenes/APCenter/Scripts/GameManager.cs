@@ -93,5 +93,9 @@ public class GameManager : MonoBehaviour
         {
             doorScript.setDoorActive();
         }
+        if(startvideoButtonScript != null)
+        {
+            startvideoButtonScript.EnableBlinking();
+        }
     }
 }
