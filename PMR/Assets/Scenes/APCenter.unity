@@ -3160,6 +3160,7 @@ MonoBehaviour:
   door: {fileID: 1260851558}
   elevatorBell: {fileID: 1032426221}
   elevatorHumm: {fileID: 1426663875}
+  startvideoButton: {fileID: 1325719156}
 --- !u!1001 &579296868
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject door;
     public AudioSource elevatorBell;
     public AudioSource elevatorHumm;
+    public GameObject startvideoButton;
     private DoorOpenClose doorScript;
+    private HighlightStartVideoButton startvideoButtonScript;
 
     private float delay = 3.0f;
     void Start()
@@ -41,6 +43,15 @@ public class GameManager : MonoBehaviour
         if(elevatorHumm != null)
         {
             elevatorHumm.Play();
+        }
+        if(startvideoButton != null)
+        {
+            startvideoButtonScript = startvideoButton.GetComponent<HighlightStartVideoButton>();
+            startvideoButtonScript.DisableBlinking();
+        }
+        else
+        {
+            Debug.LogError("couldn't find start video buttton in game manager");
         }
         StartCoroutine(ChangeButtonStatus());
     }
