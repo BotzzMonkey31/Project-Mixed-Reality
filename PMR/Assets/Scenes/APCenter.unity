@@ -8831,6 +8831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325719157}
   - component: {fileID: 1325719158}
+  - component: {fileID: 1325719159}
   m_Layer: 0
   m_Name: Start Video Button
   m_TagString: Untagged
@@ -8869,11 +8870,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1325719159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325719156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aee8642bb2959047a36145defe46eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1336696723
 GameObject:
   m_ObjectHideFlags: 0
@@ -12597,7 +12610,6 @@ GameObject:
   - component: {fileID: 1829213800}
   - component: {fileID: 1829213799}
   - component: {fileID: 1829213798}
-  - component: {fileID: 1829213802}
   m_Layer: 0
   m_Name: Column
   m_TagString: Untagged
@@ -12694,24 +12706,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1325719157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1829213802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829213797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineWidth: 4
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &1850414813
 PrefabInstance:
   m_ObjectHideFlags: 0

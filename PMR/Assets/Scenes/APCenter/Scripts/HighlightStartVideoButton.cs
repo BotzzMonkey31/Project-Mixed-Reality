@@ -2,15 +2,31 @@ using UnityEngine;
 
 public class HighlightStartVideoButton : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Outline outline;
+    private float timer = 0f;
+    private float toggleInterval = 1f;
     void Start()
     {
-        
+        outline = GetComponent<Outline>();
+        if (outline == null)
+        {
+            Debug.LogError("Outline component not found on the GameObject.");
+        }
+        else
+        {
+            outline.enabled = false;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (outline == null) return;
+
+        timer += Time.deltaTime;
+        if (timer >= toggleInterval)
+        {
+            outline.enabled = !outline.enabled;
+            timer = 0f;
+        }
     }
 }
