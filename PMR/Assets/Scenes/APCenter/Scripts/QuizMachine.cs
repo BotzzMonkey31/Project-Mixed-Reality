@@ -38,6 +38,14 @@ public class QuizMachine : MonoBehaviour
     {
         //testing
         LoadNextQuestion();
+        if(currentQuestion.CheckAnswer(answer))
+        {
+            Debug.Log("Correct!");
+        }
+        else
+        {
+            Debug.Log("Wrong!");
+        }
     }
     private void RenderQuestion(QuizQuestion question)
     {
