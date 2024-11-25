@@ -5,8 +5,19 @@ public class ElevatorControllerXR : MonoBehaviour
 {
     public Transform[] levels;
     public float moveSpeed = 2f;
+    public AudioClip[] levelAudioClips;
+    public AudioSource audioSource;
     private int currentLevel = 0;
     private bool isMoving = false;
+
+    void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     void Update()
     {
@@ -18,10 +29,10 @@ public class ElevatorControllerXR : MonoBehaviour
             if (Vector3.Distance(transform.position, target.position) < 0.01f)
             {
                 isMoving = false;
+                PlayLevelAudio(); // Play audio when elevator stops at a level
             }
         }
     }
-
 
     public void MoveDown()
     {
@@ -38,6 +49,15 @@ public class ElevatorControllerXR : MonoBehaviour
         {
             currentLevel--;
             isMoving = true;
+        }
+    }
+
+    private void PlayLevelAudio()
+    {
+        if (levelAudioClips.Length > currentLevel && levelAudioClips[currentLevel] != null)
+        {
+            audioSource.clip = levelAudioClips[currentLevel];
+            audioSource.Play();
         }
     }
 }
