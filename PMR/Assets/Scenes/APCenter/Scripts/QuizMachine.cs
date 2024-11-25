@@ -20,6 +20,10 @@ public class QuizMachine : MonoBehaviour
     {
         
     }
+    public void ButtonPushed(Answer answer)
+    {
+        Debug.Log(answer.ToString());
+    }
     private void InitQuestions()
     {
         questions.Add(new QuizQuestion(
