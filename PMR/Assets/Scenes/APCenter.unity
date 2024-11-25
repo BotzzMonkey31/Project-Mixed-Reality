@@ -9835,7 +9835,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  answer: 0
+  answer: 1
 --- !u!1 &1387270414
 GameObject:
   m_ObjectHideFlags: 0
@@ -11564,7 +11564,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  answer: 0
+  answer: 2
 --- !u!1001 &1602763226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15510,7 +15510,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  answer: 0
+  answer: 3
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
