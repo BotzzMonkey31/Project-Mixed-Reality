@@ -6,11 +6,17 @@ public class Button : XRBaseInteractable
 {
     private Outline outline;
     public GameObject ScreenPlane;
+    private HighlightStartVideoButton highlightParentScript;
     public void Start()
     {
         if(ScreenPlane == null)
         {
             Debug.LogError("no screen plane defined for button");
+        }
+        highlightParentScript = GetComponentInParent<HighlightStartVideoButton>();
+        if(highlightParentScript == null )
+        {
+            Debug.LogError("can't find highlight script on parent of button");
         }
     }
     protected override void OnEnable()
@@ -65,6 +71,10 @@ public class Button : XRBaseInteractable
             {
                 Debug.LogError("couldn't start playing video on specified gamobject for screen plane");
             }
+        }
+        if(highlightParentScript != null)
+        {
+            highlightParentScript.DisableBlinking();
         }
     }
 }
