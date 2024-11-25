@@ -8341,21 +8341,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: m_Text
-      value: 'Waarom is deze laag extra gevaarlijk als er kankercellen terechtkomen?
+      value: 'text
 
 
-        A:
-        Omdat kankercellen zich hier kunnen verspreiden via het bloed.
+        text
 
 
-        B:
-        Omdat deze laag geen bescherming heeft.
+        text
 
 
-        C:  Omdat deze laag geen
-        belangrijke functie heeft.
+        text
 
-'
+
+        text
+
+
+        text
+
+
+        text'
       objectReference: {fileID: 0}
     - target: {fileID: 114748667647615876, guid: 13db0b795570e514d9ca4d905d4abb93, type: 3}
       propertyPath: m_FontData.m_Font
