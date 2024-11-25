@@ -13,16 +13,13 @@ public class QuizMachine : MonoBehaviour
     void Start()
     {
         text = GetComponentInChildren<Text>();
-        if(text != null)
-        {
-            Debug.Log("current text on screen: " + text.text);
-        }
-        else
+        if(text == null)
         {
             Debug.LogError("can't find UI text element on screen");
         }
+        ClearScreen();
         InitQuestions();
-        LoadNextQuestion();
+        LoadNextQuestion();        
     }
     public void LoadNextQuestion()
     {
@@ -30,17 +27,45 @@ public class QuizMachine : MonoBehaviour
         {
             currentQuestion = questions[currentQuestionIndex];
             currentQuestionIndex++;
-            Debug.Log("current question: " + currentQuestion.Question);
+            RenderQuestion(currentQuestion);
         }
         else
         {
-            Debug.Log("no next question");
+            ClearScreen();
         }
     }
     public void ButtonPushed(Answer answer)
     {
         //testing
         LoadNextQuestion();
+    }
+    private void RenderQuestion(QuizQuestion question)
+    {
+        if (text != null)
+        {
+            string textToRender = "";
+            textToRender += question.Question;
+            textToRender += "\n";
+            textToRender += "\n";
+            textToRender += "A: ";
+            textToRender += question.AnswerA;
+            textToRender += "\n";
+            textToRender += "\n";
+            textToRender += "B: ";
+            textToRender += question.AnswerB;
+            textToRender += "\n";
+            textToRender += "\n";
+            textToRender += "C: ";
+            textToRender += question.AnswerC;
+            text.text = textToRender;
+        }
+    }
+    private void ClearScreen()
+    {
+        if(text != null)
+        {
+            text.text = "";
+        }
     }
     private void InitQuestions()
     {
