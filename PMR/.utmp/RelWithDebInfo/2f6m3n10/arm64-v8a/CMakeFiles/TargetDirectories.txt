@@ -1,0 +1,5 @@
+C:/Users/Acer/Project-Mixed-Reality/PMR/.utmp/RelWithDebInfo/2f6m3n10/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Acer/Project-Mixed-Reality/PMR/.utmp/RelWithDebInfo/2f6m3n10/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/Acer/Project-Mixed-Reality/PMR/.utmp/RelWithDebInfo/2f6m3n10/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/Acer/Project-Mixed-Reality/PMR/.utmp/RelWithDebInfo/2f6m3n10/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/Acer/Project-Mixed-Reality/PMR/.utmp/RelWithDebInfo/2f6m3n10/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
