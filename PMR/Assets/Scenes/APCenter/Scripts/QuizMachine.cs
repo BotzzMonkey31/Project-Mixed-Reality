@@ -2,14 +2,25 @@ using Microsoft.Win32.SafeHandles;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizMachine : MonoBehaviour
 {
     private int currentQuestionIndex = 0;
     private QuizQuestion currentQuestion;
     private List<QuizQuestion> questions = new List<QuizQuestion>();
+    private Text text;
     void Start()
     {
+        text = GetComponentInChildren<Text>();
+        if(text != null)
+        {
+            Debug.Log("current text on screen: " + text.text);
+        }
+        else
+        {
+            Debug.LogError("can't find UI text element on screen");
+        }
         InitQuestions();
         LoadNextQuestion();
     }
