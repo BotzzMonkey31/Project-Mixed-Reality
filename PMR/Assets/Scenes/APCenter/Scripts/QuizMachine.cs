@@ -1,24 +1,79 @@
 using Microsoft.Win32.SafeHandles;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizMachine : MonoBehaviour
 {
+    private int currentQuestionIndex = 0;
+    private QuizQuestion currentQuestion;
     private List<QuizQuestion> questions = new List<QuizQuestion>();
+    private Text text;
     void Start()
     {
-        InitQuestions();
-        /*
-        foreach (QuizQuestion question in questions)
+        text = GetComponentInChildren<Text>();
+        if(text == null)
         {
-            Debug.Log(question.ToString());
+            Debug.LogError("can't find UI text element on screen");
         }
-        */
+        ClearScreen();
+        InitQuestions();
+        LoadNextQuestion();        
     }
-
-    void Update()
+    public void LoadNextQuestion()
     {
-        
+        if (currentQuestionIndex < questions.Count)
+        {
+            currentQuestion = questions[currentQuestionIndex];
+            currentQuestionIndex++;
+            RenderQuestion(currentQuestion);
+        }
+        else
+        {
+            ClearScreen();
+        }
+    }
+    public void ButtonPushed(Answer answer)
+    {
+        //testing
+        LoadNextQuestion();
+        if(currentQuestion.CheckAnswer(answer))
+        {
+            Debug.Log("Correct!");
+        }
+        else
+        {
+            Debug.Log("Wrong!");
+        }
+    }
+    private void RenderQuestion(QuizQuestion question)
+    {
+        if (text != null)
+        {
+            string textToRender = "";
+            textToRender += question.Question;
+            textToRender += "\n";
+            textToRender += "\n";
+            textToRender += "A: ";
+            textToRender += question.AnswerA;
+            textToRender += "\n";
+            textToRender += "\n";
+            textToRender += "B: ";
+            textToRender += question.AnswerB;
+            textToRender += "\n";
+            textToRender += "\n";
+            textToRender += "C: ";
+            textToRender += question.AnswerC;
+            text.text = textToRender;
+        }
+    }
+    private void ClearScreen()
+    {
+        if(text != null)
+        {
+            text.text = "";
+        }
     }
     private void InitQuestions()
     {

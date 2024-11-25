@@ -23,7 +23,7 @@ public class QuizQuestion
         AnswerC = answerC;
         RightAnswer = answer;
     }
-    public bool checkAnswer(Answer answer)
+    public bool CheckAnswer(Answer answer)
     {
         if(answer == RightAnswer && RightAnswer != Answer.None)
         {
