@@ -14593,6 +14593,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1277955188}
     m_Modifications:
+    - target: {fileID: 1222942288640227801, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
+      propertyPath: m_Name
+      value: Button2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367608644661541725, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d8399d1c3f4dc6e48b30cf5b96e7bc33, type: 2}
     - target: {fileID: 5237580231730536503, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.206
@@ -14636,6 +14644,18 @@ PrefabInstance:
     - target: {fileID: 5744888188197819029, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
       propertyPath: m_Name
       value: ButtonPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017591772780889579, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
+      propertyPath: m_Name
+      value: Button1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462665453496776975, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fe423a9a0edb3641991457793a068ad, type: 2}
+    - target: {fileID: 8233904806746656368, guid: bfe2744294d9dd547a9cb6939f1f738a, type: 3}
+      propertyPath: m_Name
+      value: ButtonAP
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
