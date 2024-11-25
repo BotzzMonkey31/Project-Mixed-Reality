@@ -7,6 +7,7 @@ public class QuizMachineButton : XRBaseInteractable
 {
     public Answer answer;
     private Outline outline;
+    private QuizMachine quizMachine;
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -22,6 +23,15 @@ public class QuizMachineButton : XRBaseInteractable
         else
         {
             outline.enabled = false;
+        }
+        Transform grandparent = transform.parent?.parent;
+        if(grandparent != null)
+        {
+            quizMachine = grandparent.GetComponent<QuizMachine>();
+        }
+        if(quizMachine == null)
+        {
+            Debug.LogError("couldn't find quiz machine that quiz machine button is on");
         }
     }
     protected override void OnDisable()
@@ -48,6 +58,6 @@ public class QuizMachineButton : XRBaseInteractable
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log(answer.ToString());
+        quizMachine.ButtonPushed(answer);
     }
 }

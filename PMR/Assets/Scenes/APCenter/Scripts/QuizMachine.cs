@@ -22,7 +22,7 @@ public class QuizMachine : MonoBehaviour
     }
     public void ButtonPushed(Answer answer)
     {
-        Debug.Log(answer.ToString());
+        Debug.Log(answer.ToString() + " on quiz machine");
     }
     private void InitQuestions()
     {
