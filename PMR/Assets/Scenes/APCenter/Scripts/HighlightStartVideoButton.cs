@@ -40,6 +40,9 @@ public class HighlightStartVideoButton : MonoBehaviour
     public void DisableBlinking()
     {
         isBlinking = false;
-        outline.enabled = false;
+        if (outline != null)
+        {
+            outline.enabled = false;
+        }
     }
 }
