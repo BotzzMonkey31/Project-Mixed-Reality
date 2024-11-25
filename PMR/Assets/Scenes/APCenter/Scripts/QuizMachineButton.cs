@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class QuizMachineButton : XRBaseInteractable
 {
+    public Answer answer;
     private Outline outline;
     protected override void OnEnable()
     {
@@ -47,6 +48,6 @@ public class QuizMachineButton : XRBaseInteractable
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log("grabbed Button");
+        Debug.Log(answer.ToString());
     }
 }
