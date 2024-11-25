@@ -3053,9 +3053,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elevatorButtons:
+  - {fileID: 298259636}
   - {fileID: 1006987825}
   - {fileID: 513862931}
-  - {fileID: 298259636}
   door: {fileID: 1260851558}
   elevatorBell: {fileID: 1032426221}
   elevatorHumm: {fileID: 1426663875}
