@@ -1,28 +1,35 @@
 using Microsoft.Win32.SafeHandles;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class QuizMachine : MonoBehaviour
 {
+    private int currentQuestionIndex = 0;
+    private QuizQuestion currentQuestion;
     private List<QuizQuestion> questions = new List<QuizQuestion>();
     void Start()
     {
         InitQuestions();
-        /*
-        foreach (QuizQuestion question in questions)
-        {
-            Debug.Log(question.ToString());
-        }
-        */
+        LoadNextQuestion();
     }
-
-    void Update()
+    public void LoadNextQuestion()
     {
-        
+        if (currentQuestionIndex < questions.Count)
+        {
+            currentQuestion = questions[currentQuestionIndex];
+            currentQuestionIndex++;
+            Debug.Log("current question: " + currentQuestion.Question);
+        }
+        else
+        {
+            Debug.Log("no next question");
+        }
     }
     public void ButtonPushed(Answer answer)
     {
-        Debug.Log(answer.ToString() + " on quiz machine");
+        //testing
+        LoadNextQuestion();
     }
     private void InitQuestions()
     {
