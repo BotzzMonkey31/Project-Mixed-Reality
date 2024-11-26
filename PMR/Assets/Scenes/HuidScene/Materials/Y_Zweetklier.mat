@@ -116,7 +116,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeWidth: 0.002
-    - _EndFadeDistance: 8
+    - _EndFadeDistance: 50
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
