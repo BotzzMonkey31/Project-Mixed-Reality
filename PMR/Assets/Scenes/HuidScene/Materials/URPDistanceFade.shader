@@ -1,17 +1,21 @@
-Shader "Custom/URPDistanceFade" {
-    Properties {
+Shader "Custom/URPDistanceFade"
+{
+    Properties
+    {
         _Color("Color", Color) = (1, 1, 1, 1)
         _BeginFadeDistance("Begin Fade Distance", Float) = 5.0
         _EndFadeDistance("End Fade Distance", Float) = 10.0
         _MainTex("Texture", 2D) = "white" {}
     }
 
-    SubShader {
+    SubShader
+    {
         Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off // Disable writing to the depth buffer for transparency
 
-        Pass {
+        Pass
+        {
             Name "ForwardLit"
             Tags { "LightMode" = "UniversalForward" }
 
@@ -20,17 +24,21 @@ Shader "Custom/URPDistanceFade" {
             #pragma fragment frag
             #include "UnityCG.cginc"
 
-            struct appdata_t {
+            struct appdata_t
+            {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL; // Added normal for lighting calculations
                 float2 uv : TEXCOORD0; // Texture coordinates
+                UNITY_VERTEX_INPUT_INSTANCE_ID //Insert
             };
 
-            struct v2f {
+            struct v2f
+            {
                 float4 pos : SV_POSITION;
                 float fade : TEXCOORD0; // Store fade value to pass to fragment shader
                 float3 normal : TEXCOORD1; // Pass the normal to the fragment shader
                 float2 uv : TEXCOORD2; // Pass UV to fragment shader
+                UNITY_VERTEX_OUTPUT_STEREO //Insert
             };
 
             float4 _Color;
@@ -38,12 +46,18 @@ Shader "Custom/URPDistanceFade" {
             float _EndFadeDistance;
             sampler2D _MainTex;
 
-            v2f vert(appdata_t v) {
+            v2f vert(appdata_t v)
+            {
                 v2f o;
+                UNITY_SETUP_INSTANCE_ID(v); // Insert
+                UNITY_INITIALIZE_OUTPUT(v2f, o); // Insert
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); // Insert
                 o.pos = UnityObjectToClipPos(v.vertex);
 
-                // Calculate distance from the camera to the vertex in world space
-                float dist = distance(_WorldSpaceCameraPos, mul(unity_ObjectToWorld, v.vertex));
+                // Calculate the full 3D distance from the camera to the vertex
+                float3 cameraPos = _WorldSpaceCameraPos.xyz;
+                float3 objectPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                float dist = distance(cameraPos, objectPos); // Calculate the Euclidean distance in 3D
                 
                 // Calculate fade factor based on distance
                 float fadeFactor = saturate((dist - _BeginFadeDistance) / (_EndFadeDistance - _BeginFadeDistance));
@@ -54,7 +68,8 @@ Shader "Custom/URPDistanceFade" {
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target {
+            fixed4 frag(v2f i) : SV_Target
+            {
                 // Sample texture color
                 fixed4 texCol = tex2D(_MainTex, i.uv);
                 fixed4 col = texCol * _Color;
