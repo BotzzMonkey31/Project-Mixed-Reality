@@ -10,6 +10,7 @@ public class QuizMachine : MonoBehaviour
     private QuizQuestion currentQuestion;
     private List<QuizQuestion> questions = new List<QuizQuestion>();
     private Text text;
+    private bool questionCanCurrentlyBeAnswered = false;
     void Start()
     {
         text = GetComponentInChildren<Text>();
@@ -36,19 +37,22 @@ public class QuizMachine : MonoBehaviour
     }
     public void ButtonPushed(Answer answer)
     {
-        //testing
-        LoadNextQuestion();
-        if(currentQuestion.CheckAnswer(answer))
+        if(questionCanCurrentlyBeAnswered)
         {
-            Debug.Log("Correct!");
-        }
-        else
-        {
-            Debug.Log("Wrong!");
+            if (currentQuestion.CheckAnswer(answer))
+            {
+                Debug.Log("Correct!");
+            }
+            else
+            {
+                Debug.Log("Wrong!");
+            }
+            ClearScreen();
         }
     }
     private void RenderQuestion(QuizQuestion question)
     {
+        questionCanCurrentlyBeAnswered = true;
         if (text != null)
         {
             string textToRender = "";
@@ -70,6 +74,7 @@ public class QuizMachine : MonoBehaviour
     }
     private void ClearScreen()
     {
+        questionCanCurrentlyBeAnswered = false;
         if(text != null)
         {
             text.text = "";
