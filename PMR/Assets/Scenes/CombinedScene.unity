@@ -10416,6 +10416,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6244408015387564606, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7078235741395690060, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_Name
       value: Elevator
