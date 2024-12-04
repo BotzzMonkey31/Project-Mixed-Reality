@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 68583931}
   - component: {fileID: 68583930}
   - component: {fileID: 68583929}
-  - component: {fileID: 68583928}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -155,18 +154,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2073305144}
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
---- !u!114 &68583928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68583926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40036b71248c6634980991552ded1e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!328 &68583929
 VideoPlayer:
   m_ObjectHideFlags: 0
