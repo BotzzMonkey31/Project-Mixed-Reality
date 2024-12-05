@@ -1391,6 +1391,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
+  gameManager: {fileID: 1082959055}
 --- !u!1 &1249617917
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TutorialButton : UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable
 {
+    public GameObject gameManager;
+    private GameManagerTutorial GameManager;
     private Outline outline;
     private HighlightStartVideoButton highlightParentScript;
     public void Start()
@@ -11,6 +13,14 @@ public class TutorialButton : UnityEngine.XR.Interaction.Toolkit.Interactables.X
         if (highlightParentScript == null)
         {
             Debug.LogError("can't find highlight script on parent of button");
+        }
+        if (gameManager != null)
+        {
+            GameManager = gameManager.GetComponent<GameManagerTutorial>();
+        }
+        if (GameManager == null)
+        {
+            Debug.LogError("couldn't get gamemanager script");
         }
     }
     protected override void OnEnable()
@@ -55,10 +65,13 @@ public class TutorialButton : UnityEngine.XR.Interaction.Toolkit.Interactables.X
 
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log("push button");
         if (highlightParentScript != null)
         {
             highlightParentScript.DisableBlinking();
+        }
+        if (GameManager != null)
+        {
+            GameManager.QuitTutorial();
         }
     }
 }
