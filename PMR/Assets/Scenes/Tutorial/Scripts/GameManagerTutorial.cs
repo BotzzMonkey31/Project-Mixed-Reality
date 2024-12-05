@@ -18,6 +18,10 @@ public class GameManagerTutorial : MonoBehaviour
     {
         
     }
+    public void VideoFinishedPlaying()
+    {
+        Debug.Log("video is finished");
+    }
     public void QuitTutorial()
     {
         SceneManager.LoadScene("CombinedScene");
