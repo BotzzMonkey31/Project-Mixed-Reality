@@ -1771,6 +1771,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 2
+  levelAudioClips: []
+  audioSource: {fileID: 0}
 --- !u!1 &8039360360878530147
 GameObject:
   m_ObjectHideFlags: 0
