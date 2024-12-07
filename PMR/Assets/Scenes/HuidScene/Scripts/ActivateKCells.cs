@@ -6,6 +6,7 @@ public class ActivateKCells : MonoBehaviour
     private GameObject subObject1; // Eerste subobject
     private GameObject subObject2; // Tweede subobject
     private bool finished = false; // Zorgt ervoor dat activatie slechts één keer plaatsvindt
+    public bool startActivation = false;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class ActivateKCells : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.leftArrowKey.wasPressedThisFrame && !finished)
+        if (startActivation)
         {
             ActivateSubObjects();
             finished = true;

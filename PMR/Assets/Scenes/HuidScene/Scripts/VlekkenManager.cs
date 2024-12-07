@@ -6,14 +6,14 @@ public class VlekkenManager : MonoBehaviour
 {
     public GameObject[] vlekkenArray; // Array van gameobjects met de beschreven structuur
     public float delayBetweenActivations = 1.0f; // Instelbare vertraging in seconden tussen activaties
-    public bool activate = false; // Boolean om te controleren of het proces moet starten
+    public bool startActivation = false; // Boolean om te controleren of het proces moet starten
 
     private bool hasStarted = false; // Boolean om ervoor te zorgen dat de Start-logica maar één keer wordt uitgevoerd
 
     private void Update()
     {
-        // Controleer of 'activate' true is en de logica nog niet is gestart
-        if (activate && !hasStarted)
+        // Controleer of 'startActivation' true is en de logica nog niet is gestart
+        if (startActivation && !hasStarted)
         {
             hasStarted = true; // Markeer dat het proces is gestart
             StartCoroutine(ActivateVlekken()); // Start de coroutine éénmalig
@@ -22,7 +22,7 @@ public class VlekkenManager : MonoBehaviour
         // Controleer of de spacebar wordt ingedrukt
         if (Keyboard.current.spaceKey.isPressed)
         {
-            activate = true;  // Zet de 'activate' op true wanneer de spatiebalk wordt ingedrukt
+            startActivation = true;  // Zet de 'startActivation' op true wanneer de spatiebalk wordt ingedrukt
         }
 
 
