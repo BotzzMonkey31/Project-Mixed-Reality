@@ -8,6 +8,7 @@ public class ElevatorControllerXR : MonoBehaviour
     public AudioClip[] levelAudioClips;
     public AudioSource audioSource;
     private int currentLevel = 0;
+    public int huidLevel = 0;
     private bool isMoving = false;
 
     void Start()
@@ -30,6 +31,7 @@ public class ElevatorControllerXR : MonoBehaviour
             {
                 isMoving = false;
                 PlayLevelAudio(); // Play audio when elevator stops at a level
+                ChangeHuidLevel(); // Update level so huid stuff can be triggered
             }
         }
     }
@@ -59,5 +61,9 @@ public class ElevatorControllerXR : MonoBehaviour
             audioSource.clip = levelAudioClips[currentLevel];
             audioSource.Play();
         }
+    }
+
+    private void ChangeHuidLevel() {
+        huidLevel = currentLevel;
     }
 }
