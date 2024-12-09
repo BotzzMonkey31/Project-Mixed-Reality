@@ -14532,7 +14532,7 @@ MonoBehaviour:
   elevatorBell: {fileID: 3324652943315233470}
   elevatorHumm: {fileID: 5626955618453787132}
   startvideoButton: {fileID: 2100306582036372808}
-  globalAudioClip: {fileID: 8300000, guid: 37adbfac35bbdbd468b6ce9193738906, type: 3}
+  globalAudioClip: {fileID: 8300000, guid: 18edebbc6285eb846ad22080ae91b2f5, type: 3}
 --- !u!1001 &4624917823602752064
 PrefabInstance:
   m_ObjectHideFlags: 0
