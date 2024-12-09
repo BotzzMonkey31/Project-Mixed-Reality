@@ -1636,7 +1636,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2c60cec345c24df418849025e33144ab, type: 2}
+  - {fileID: 2100000, guid: 1272b6d68880ebd42a43609946c10683, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1771,6 +1771,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 2
+  levelAudioClips: []
+  audioSource: {fileID: 0}
 --- !u!1 &8039360360878530147
 GameObject:
   m_ObjectHideFlags: 0

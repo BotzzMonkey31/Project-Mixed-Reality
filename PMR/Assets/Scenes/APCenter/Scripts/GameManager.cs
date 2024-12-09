@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject XROrigin;
+    public GameObject HardCodedStartPosition;
+
     public GameObject[] elevatorButtons;
     public GameObject door;
     public AudioSource elevatorBell;
@@ -14,6 +17,11 @@ public class GameManager : MonoBehaviour
     private float delay = 3.0f;
     void Start()
     {
+        if(XROrigin != null && HardCodedStartPosition != null)
+        {
+            XROrigin.transform.position = HardCodedStartPosition.transform.position;
+            XROrigin.transform.rotation = HardCodedStartPosition.transform.rotation;
+        }
         foreach (GameObject button in elevatorButtons)
         {
             var outlineScript = button.GetComponent<Outline>();
