@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Button : XRBaseInteractable
 {
+    public GameObject gameManager;
+    private GameManager gameManagerScript;
     private Outline outline;
     public GameObject ScreenPlane;
     private HighlightStartVideoButton highlightParentScript;
@@ -17,6 +19,14 @@ public class Button : XRBaseInteractable
         if(highlightParentScript == null )
         {
             Debug.LogError("can't find highlight script on parent of button");
+        }
+        if(gameManager != null)
+        {
+            gameManagerScript = gameManager.GetComponent<GameManager>();
+        }
+        else
+        {
+            Debug.LogError("can't find gamemanager in button");
         }
     }
     protected override void OnEnable()
@@ -75,6 +85,10 @@ public class Button : XRBaseInteractable
         if(highlightParentScript != null)
         {
             highlightParentScript.DisableBlinking();
+        }
+        if(gameManagerScript != null)
+        {
+            gameManagerScript.StopAudio();
         }
     }
 }

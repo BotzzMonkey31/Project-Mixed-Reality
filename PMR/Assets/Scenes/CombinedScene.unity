@@ -13347,6 +13347,7 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
+  gameManager: {fileID: 8402350126615906399}
   ScreenPlane: {fileID: 5409203698076460214}
 --- !u!23 &3448706563577983194
 MeshRenderer:
