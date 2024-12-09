@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
         if(doorScript != null)
         {
             doorScript.setDoorActive();
+            doorScript.ToggleDoor();
         }
         if(startvideoButtonScript != null)
         {
