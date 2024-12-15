@@ -1647,6 +1647,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &418819865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7078235741395690060, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+  m_PrefabInstance: {fileID: 1843727342730758910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &422990819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10836,6 +10841,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: quizMachineObject
+      value: 
+      objectReference: {fileID: 9091242479865177703}
+    - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: 'levels.Array.data[0]'
       value: 
       objectReference: {fileID: 1838847588}
@@ -14795,6 +14804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a13f23db255cec4383a1eda903167f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elevatorControllerObject: {fileID: 418819865}
 --- !u!1001 &4667947834199799506
 PrefabInstance:
   m_ObjectHideFlags: 0

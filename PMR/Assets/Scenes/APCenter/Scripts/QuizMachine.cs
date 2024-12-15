@@ -11,8 +11,22 @@ public class QuizMachine : MonoBehaviour
     private List<QuizQuestion> questions = new List<QuizQuestion>();
     private Text text;
     private bool questionCanCurrentlyBeAnswered = false;
+    public GameObject elevatorControllerObject;
+    private ElevatorControllerXR controller;
     void Start()
     {
+        if(elevatorControllerObject == null)
+        {
+            Debug.LogError("elevator controller object is not referenced");
+        }
+        else
+        {
+            controller = elevatorControllerObject.GetComponent<ElevatorControllerXR>();
+            if(controller == null)
+            {
+                Debug.LogError("elevator controller script is not referenced");
+            }
+        }
         text = GetComponentInChildren<Text>();
         if(text == null)
         {
@@ -20,7 +34,7 @@ public class QuizMachine : MonoBehaviour
         }
         ClearScreen();
         InitQuestions();
-        LoadNextQuestion();        
+        //LoadNextQuestion();        
     }
     public void LoadNextQuestion()
     {
@@ -48,6 +62,10 @@ public class QuizMachine : MonoBehaviour
                 Debug.Log("Wrong!");
             }
             ClearScreen();
+            if(controller != null)
+            {
+                controller.UnlockControls();
+            }
         }
     }
     private void RenderQuestion(QuizQuestion question)

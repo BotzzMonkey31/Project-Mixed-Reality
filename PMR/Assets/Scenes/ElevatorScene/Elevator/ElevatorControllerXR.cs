@@ -7,12 +7,27 @@ public class ElevatorControllerXR : MonoBehaviour
     public float moveSpeed = 2f;
     public AudioClip[] levelAudioClips;
     public AudioSource audioSource;
+    public GameObject quizMachineObject;
+    private QuizMachine quizMachine;
     private int currentLevel = 0;
     public int huidLevel = 0;
     private bool isMoving = false;
+    private bool controlsLocked = false;
 
     void Start()
     {
+        if(quizMachineObject == null)
+        {
+            Debug.LogError("quiz machine object is not referenced");
+        }
+        else
+        {
+            quizMachine = quizMachineObject.GetComponent<QuizMachine>();
+            if(quizMachine == null )
+            {
+                Debug.LogError("quiz machine script is not referenced");
+            }
+        }
         audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -30,6 +45,7 @@ public class ElevatorControllerXR : MonoBehaviour
             if (Vector3.Distance(transform.position, target.position) < 0.01f)
             {
                 isMoving = false;
+                LockControls();
                 PlayLevelAudio(); // Play audio when elevator stops at a level
                 ChangeHuidLevel(); // Update level so huid stuff can be triggered
             }
@@ -38,7 +54,7 @@ public class ElevatorControllerXR : MonoBehaviour
 
     public void MoveDown()
     {
-        if (!isMoving && currentLevel < levels.Length - 1)
+        if (!isMoving && currentLevel < levels.Length - 1 && !controlsLocked)
         {
             currentLevel++;
             isMoving = true;
@@ -47,7 +63,7 @@ public class ElevatorControllerXR : MonoBehaviour
 
     public void MoveUp()
     {
-        if (!isMoving && currentLevel > 0)
+        if (!isMoving && currentLevel > 0 && !controlsLocked)
         {
             currentLevel--;
             isMoving = true;
@@ -60,10 +76,28 @@ public class ElevatorControllerXR : MonoBehaviour
         {
             audioSource.clip = levelAudioClips[currentLevel];
             audioSource.Play();
+
+            // Trigger quiz logic after level audio finishes
+            Invoke(nameof(StartQuiz), audioSource.clip.length);
         }
     }
 
     private void ChangeHuidLevel() {
         huidLevel = currentLevel;
+    }
+    private void StartQuiz()
+    {
+        if (quizMachine != null)
+        {
+            quizMachine.LoadNextQuestion();
+        }
+    }
+    public void UnlockControls()
+    {
+        controlsLocked = false;
+    }
+    private void LockControls()
+    {
+        controlsLocked = true;
     }
 }
