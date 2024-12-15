@@ -15,6 +15,9 @@ public class QuizMachine : MonoBehaviour
     private ElevatorControllerXR controller;
     public AudioSource AudioSourceCorrect;
     public AudioSource AudioSourceWrong;
+    public AudioSource AudioSourceQuestions;
+    public AudioClip[] audioclipsQuestions;
+    private int currentAudioClipIndex = 0;
     void Start()
     {
         if(elevatorControllerObject == null)
@@ -42,6 +45,10 @@ public class QuizMachine : MonoBehaviour
         {
             Debug.LogError("audio source wrong is not referenced");
         }
+        if(audioclipsQuestions == null)
+        {
+            Debug.LogError("audio source questions is not referenced");
+        }
         ClearScreen();
         InitQuestions();
         //LoadNextQuestion();        
@@ -50,8 +57,14 @@ public class QuizMachine : MonoBehaviour
     {
         if (currentQuestionIndex < questions.Count)
         {
+            if(currentAudioClipIndex + 1 <= audioclipsQuestions.Length)
+            {
+                AudioSourceQuestions.clip = audioclipsQuestions[currentQuestionIndex];
+            }
+            AudioSourceQuestions.Play();
             currentQuestion = questions[currentQuestionIndex];
             currentQuestionIndex++;
+            currentAudioClipIndex++;
             RenderQuestion(currentQuestion);
         }
         else
@@ -63,6 +76,10 @@ public class QuizMachine : MonoBehaviour
     {
         if(questionCanCurrentlyBeAnswered)
         {
+            if(AudioSourceQuestions.isPlaying && AudioSourceQuestions != null)
+            {
+                AudioSourceQuestions.Stop();
+            }
             if (currentQuestion.CheckAnswer(answer))
             {
                 Debug.Log("Correct!");
