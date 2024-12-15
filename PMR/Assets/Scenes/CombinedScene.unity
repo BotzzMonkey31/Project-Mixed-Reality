@@ -15096,6 +15096,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elevatorControllerObject: {fileID: 418819865}
+  AudioSourceCorrect: {fileID: 1187361163}
+  AudioSourceWrong: {fileID: 2093131502}
 --- !u!1001 &4667947834199799506
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class QuizMachine : MonoBehaviour
     private bool questionCanCurrentlyBeAnswered = false;
     public GameObject elevatorControllerObject;
     private ElevatorControllerXR controller;
+    public AudioSource AudioSourceCorrect;
+    public AudioSource AudioSourceWrong;
     void Start()
     {
         if(elevatorControllerObject == null)
@@ -31,6 +33,14 @@ public class QuizMachine : MonoBehaviour
         if(text == null)
         {
             Debug.LogError("can't find UI text element on screen");
+        }
+        if(AudioSourceCorrect == null)
+        {
+            Debug.LogError("audio source correct is not referenced");
+        }
+        if (AudioSourceWrong == null)
+        {
+            Debug.LogError("audio source wrong is not referenced");
         }
         ClearScreen();
         InitQuestions();
@@ -56,10 +66,18 @@ public class QuizMachine : MonoBehaviour
             if (currentQuestion.CheckAnswer(answer))
             {
                 Debug.Log("Correct!");
+                if(AudioSourceCorrect != null)
+                {
+                    AudioSourceCorrect.Play();
+                }
             }
             else
             {
                 Debug.Log("Wrong!");
+                if(AudioSourceWrong != null)
+                {
+                    AudioSourceWrong.Play();
+                }
             }
             ClearScreen();
             if(controller != null)
