@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public AudioSource elevatorBell;
     public AudioSource elevatorHumm;
     public GameObject startvideoButton;
+    public AudioClip globalAudioClip;
+    private AudioSource globalAudioSource;
     private DoorOpenClose doorScript;
     private HighlightStartVideoButton startvideoButtonScript;
 
@@ -61,6 +63,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("couldn't find start video buttton in game manager");
         }
+        if (globalAudioClip != null)
+        {
+            globalAudioSource = gameObject.AddComponent<AudioSource>();
+            globalAudioSource.clip = globalAudioClip;
+            globalAudioSource.loop = true;
+        }
+        else
+        {
+            Debug.LogError("Global audio clip is not set.");
+        }
         StartCoroutine(ChangeButtonStatus());
     }
 
@@ -100,10 +112,36 @@ public class GameManager : MonoBehaviour
         if(doorScript != null)
         {
             doorScript.setDoorActive();
+            doorScript.ToggleDoor();
         }
         if(startvideoButtonScript != null)
         {
             startvideoButtonScript.EnableBlinking();
+        }
+        StartAudio();
+    }
+    public void StartAudio()
+    {
+        if (globalAudioSource != null)
+        {
+            globalAudioSource.Play();
+            Debug.Log("Global audio started.");
+        }
+        else
+        {
+            Debug.LogError("Global audio source is not initialized.");
+        }
+    }
+    public void StopAudio()
+    {
+        if (globalAudioSource != null)
+        {
+            globalAudioSource.Stop();
+            Debug.Log("Global audio stopped.");
+        }
+        else
+        {
+            Debug.LogError("Global audio source is not initialized.");
         }
     }
 }
