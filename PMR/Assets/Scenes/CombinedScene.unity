@@ -2223,6 +2223,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5911473440076857826, guid: 30971ea7d19a057458bf89e85d9d1f6c, type: 3}
   m_PrefabInstance: {fileID: 479914692}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &516812645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516812646}
+  m_Layer: 0
+  m_Name: level (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516812646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516812645}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.679392, y: -3.2991264, z: 4.8098593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1851193440}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &519399283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7342,6 +7373,7 @@ Transform:
   - {fileID: 886510759}
   - {fileID: 1621109137}
   - {fileID: 534660997}
+  - {fileID: 516812646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1878093569
@@ -11291,7 +11323,7 @@ PrefabInstance:
       objectReference: {fileID: 9772596}
     - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: levels.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: quizMachineObject
@@ -11314,8 +11346,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 534660997}
     - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: 'levels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 516812646}
+    - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: levelAudioClips.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: 'levelAudioClips.Array.data[0]'
@@ -11333,6 +11369,10 @@ PrefabInstance:
       propertyPath: 'levelAudioClips.Array.data[3]'
       value: 
       objectReference: {fileID: 8300000, guid: cedf8ba4562cacc4cb052fbee08a696e, type: 3}
+    - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: 'levelAudioClips.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 87de84ac538ef8444a8232212bf935d0, type: 3}
     - target: {fileID: 5673413095286379260, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.04132
