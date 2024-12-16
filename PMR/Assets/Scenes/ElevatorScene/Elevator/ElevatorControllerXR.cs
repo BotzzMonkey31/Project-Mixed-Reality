@@ -78,7 +78,7 @@ public class ElevatorControllerXR : MonoBehaviour
             audioSource.Play();
 
             // Trigger quiz logic after level audio finishes
-            Invoke(nameof(StartQuiz), audioSource.clip.length);
+            Invoke(nameof(StartQuiz), audioSource.clip.length + 0.5f);
         }
     }
 
