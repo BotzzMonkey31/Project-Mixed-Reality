@@ -11382,6 +11382,10 @@ PrefabInstance:
       propertyPath: 'levelAudioClips.Array.data[4]'
       value: 
       objectReference: {fileID: 8300000, guid: 87de84ac538ef8444a8232212bf935d0, type: 3}
+    - target: {fileID: 5491180259001070506, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 01ff00a775f6e194196ea601b3dada17, type: 2}
     - target: {fileID: 5673413095286379260, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.04132
@@ -11430,9 +11434,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6476340233236399317, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7078235741395690060, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_Name
       value: Elevator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693339406150109239, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.68985885
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693339406150109239, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9067009634903161133, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_Enabled
