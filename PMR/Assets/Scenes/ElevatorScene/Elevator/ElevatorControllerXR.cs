@@ -14,6 +14,8 @@ public class ElevatorControllerXR : MonoBehaviour
     private bool isMoving = false;
     private bool controlsLocked = false;
     public GameObject elevatorDoor;
+    public GameObject gameManagerObject;
+    private GameManager gameManager;
 
     void Start()
     {
@@ -37,6 +39,18 @@ public class ElevatorControllerXR : MonoBehaviour
         if(elevatorDoor == null)
         {
             Debug.LogError("elevator door is not assigned");
+        }
+        if (gameManagerObject == null)
+        {
+            Debug.LogError("game manager object is not assigned");
+        }
+        else
+        {
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+            if (gameManager == null)
+            {
+                Debug.LogError("game manager script is not assigned");
+            }
         }
     }
 
@@ -81,6 +95,7 @@ public class ElevatorControllerXR : MonoBehaviour
         if(currentLevel == levels.Length - 1 && elevatorDoor != null)
         {
             elevatorDoor.SetActive(false);
+            gameManager.StartAudio();
         }
         if (levelAudioClips.Length > currentLevel && levelAudioClips[currentLevel] != null)
         {
