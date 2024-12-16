@@ -2670,6 +2670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pannel: {fileID: 320549178}
+  gameManagerObject: {fileID: 8402350126615906399}
 --- !u!1001 &673589463
 PrefabInstance:
   m_ObjectHideFlags: 0
