@@ -156,6 +156,7 @@ public class QuizMachine : MonoBehaviour
             "Omdat deze laag geen belangrijke functie heeft.",
             Answer.A
             ));
+        /*
         questions.Add(new QuizQuestion(
             "Wat kun je doen om deze laag van je huid te beschermen tegen UV-stralen?",
             "Zonnecrème gebruiken.",
@@ -163,5 +164,6 @@ public class QuizMachine : MonoBehaviour
             "Niets, want deze laag is sterk genoeg.",
             Answer.A
             ));
+        */
     }
 }
