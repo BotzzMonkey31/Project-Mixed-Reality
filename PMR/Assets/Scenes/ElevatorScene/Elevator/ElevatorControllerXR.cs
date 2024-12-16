@@ -13,6 +13,7 @@ public class ElevatorControllerXR : MonoBehaviour
     public int huidLevel = 0;
     private bool isMoving = false;
     private bool controlsLocked = false;
+    public GameObject elevatorDoor;
 
     void Start()
     {
@@ -32,6 +33,10 @@ public class ElevatorControllerXR : MonoBehaviour
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        if(elevatorDoor == null)
+        {
+            Debug.LogError("elevator door is not assigned");
         }
     }
 
@@ -72,6 +77,11 @@ public class ElevatorControllerXR : MonoBehaviour
 
     private void PlayLevelAudio()
     {
+        // reopen elevator
+        if(currentLevel == levels.Length - 1 && elevatorDoor != null)
+        {
+            elevatorDoor.SetActive(false);
+        }
         if (levelAudioClips.Length > currentLevel && levelAudioClips[currentLevel] != null)
         {
             audioSource.clip = levelAudioClips[currentLevel];

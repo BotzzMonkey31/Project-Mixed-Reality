@@ -11323,6 +11323,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9772596}
     - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
+      propertyPath: elevatorDoor
+      value: 
+      objectReference: {fileID: 320549178}
+    - target: {fileID: 1617042122923069419, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: levels.Array.size
       value: 5
       objectReference: {fileID: 0}
