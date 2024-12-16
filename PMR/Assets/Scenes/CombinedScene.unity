@@ -11424,7 +11424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032976105433332120, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6244408015387564606, guid: c18fc646affeb7147aacafec41c17c92, type: 3}
       propertyPath: m_IsActive
@@ -14261,6 +14261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 8402350126615906399}
+  elevatorDoor: {fileID: 320549178}
 --- !u!1001 &3914334367965969410
 PrefabInstance:
   m_ObjectHideFlags: 0

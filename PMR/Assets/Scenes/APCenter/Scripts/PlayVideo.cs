@@ -6,6 +6,7 @@ public class PlayVideo : MonoBehaviour
     VideoPlayer player;
     public GameObject gameManager;
     private GameManager gameManagerScript;
+    public GameObject elevatorDoor;
     void Start()
     {
         player = GetComponent<VideoPlayer>();
@@ -25,6 +26,10 @@ public class PlayVideo : MonoBehaviour
         {
             Debug.LogError("can't find gamemanager in video plane");
         }
+        if(elevatorDoor == null)
+        {
+            Debug.LogError("elevator door is not assigned");
+        }
     }
     public void StartVideo()
     {
@@ -38,6 +43,10 @@ public class PlayVideo : MonoBehaviour
         if(gameManagerScript != null)
         {
             gameManagerScript.StartAudio();
+        }
+        if(elevatorDoor != null)
+        {
+            elevatorDoor.SetActive(false);
         }
     }
 
