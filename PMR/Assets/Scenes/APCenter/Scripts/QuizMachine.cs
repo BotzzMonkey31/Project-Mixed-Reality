@@ -87,6 +87,11 @@ public class QuizMachine : MonoBehaviour
                 {
                     AudioSourceCorrect.Play();
                 }
+                ClearScreen();
+                if (controller != null)
+                {
+                    controller.UnlockControls();
+                }
             }
             else
             {
@@ -95,11 +100,6 @@ public class QuizMachine : MonoBehaviour
                 {
                     AudioSourceWrong.Play();
                 }
-            }
-            ClearScreen();
-            if(controller != null)
-            {
-                controller.UnlockControls();
             }
         }
     }
