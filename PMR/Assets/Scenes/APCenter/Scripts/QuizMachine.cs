@@ -133,6 +133,18 @@ public class QuizMachine : MonoBehaviour
             text.text = "";
         }
     }
+    private void SetAdvanceAfetQuestionExplanationText()
+    {
+        questionCanCurrentlyBeAnswered = false;
+        if(text != null)
+        {
+            string resultText = "";
+            resultText += "Juist!";
+            resultText += "\n\n";
+            resultText += "Druk op de liftknop om verder te gaan.";
+            text.text = resultText;
+        }
+    }
     private void InitQuestions()
     {
         questions.Add(new QuizQuestion(
