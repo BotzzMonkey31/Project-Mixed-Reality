@@ -75,6 +75,7 @@ public class ElevatorControllerXR : MonoBehaviour
     {
         if (!isMoving && currentLevel < levels.Length - 1 && !controlsLocked)
         {
+            quizMachine.ClearScreen();
             currentLevel++;
             isMoving = true;
         }

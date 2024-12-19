@@ -87,7 +87,8 @@ public class QuizMachine : MonoBehaviour
                 {
                     AudioSourceCorrect.Play();
                 }
-                ClearScreen();
+                //ClearScreen();
+                SetAdvanceAfetQuestionExplanationText();
                 if (controller != null)
                 {
                     controller.UnlockControls();
@@ -125,7 +126,7 @@ public class QuizMachine : MonoBehaviour
             text.text = textToRender;
         }
     }
-    private void ClearScreen()
+    public void ClearScreen()
     {
         questionCanCurrentlyBeAnswered = false;
         if(text != null)
